@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Home: React.FC<Props> = ({ name }) => {
-  return <div>{name}</div>;
+  return <div>{name}, this is preview</div>;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
