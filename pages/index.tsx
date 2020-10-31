@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import { baseUrl } from "../config/index";
 
 type Props = {
   name: string;
@@ -9,7 +10,7 @@ const Home: React.FC<Props> = ({ name }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("/api/hello");
+  const res = await fetch(`${baseUrl}/api/hello`);
   const { name: test } = await res.json();
   return { props: { name: test } };
 };
